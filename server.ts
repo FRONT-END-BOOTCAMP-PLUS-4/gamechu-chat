@@ -12,7 +12,7 @@ const io = new Server(server, {
         methods: ['GET', 'POST'],
     },
 });
-console.log('잘옴?: ', process.env.CLIENT_URL);
+
 io.on('connection', (socket: Socket) => {
     console.log(`Socket-Server: a user connected (id: ${socket.id})`);
 
