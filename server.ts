@@ -8,7 +8,8 @@ const port = 3036;
 const server = createServer();
 const io = new Server(server, {
     cors: {
-        origin: process.env.CLIENT_URL,
+        // origin: process.env.CLIENT_URL, //https://gamechu.com
+        origin: '*', // www.gamechu.com, gamechu.com
         methods: ['GET', 'POST'],
     },
 });
