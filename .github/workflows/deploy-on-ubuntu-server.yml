@@ -1,7 +1,7 @@
 # 워크 플로우 이름 : 우분투 서버에서 빌드와 배포를 위한 워크 플로우
-name: 'Build and Deploy to Ubuntu Server Run'
+name: "Build and Deploy to Ubuntu Server Run"
 
-# master 브랜치에 push 가 발생하면 jobs가 실행되도록 이벤트 설정
+# dev 브랜치에 push 가 발생하면 jobs가 실행되도록 이벤트 설정
 on:
     push:
         branches:
@@ -14,16 +14,16 @@ jobs:
         runs-on: [self-hosted, gamechu-chat-server]
 
         steps:
-            - name: Build Next.js Project
-              run: echo "Build Next.js Project"
+            - name: Build chat server
+              run: echo "Build chat server"
 
     # 두번째 단계: 테스트
     test:
         runs-on: [self-hosted, gamechu-chat-server]
 
         steps:
-            - name: Test Next.js Project
-              run: echo "Test Next.js Project"
+            - name: Test chat server
+              run: echo "Test chat server"
 
     # 세번째 단계: 배포
     deploy:
@@ -31,5 +31,5 @@ jobs:
         runs-on: [self-hosted, gamechu-chat-server]
 
         steps:
-            - name: Deploy Next.js Project
-              run: /home/gamechu/www/gamechu-chat/next-app-update.sh
+            - name: Deploy chat server
+              run: /home/gamechu/www/gamechu-chat/chat-server-update.sh
