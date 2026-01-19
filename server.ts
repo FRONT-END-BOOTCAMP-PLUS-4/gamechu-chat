@@ -36,7 +36,7 @@ io.on("connection", (socket: Socket) => {
         }) => {
             io.to(msg.roomId).emit("chat message", msg);
             console.log(msg);
-        }
+        },
     );
 
     socket.on("disconnect", () => {
